@@ -1,0 +1,70 @@
+#Methods and Functions
+
+
+№1
+#creating class
+class MyClass:
+    #method of specimen
+     def say(self):
+         #reflecting the message
+         print("Hello to everybody")
+#creating specimen
+obj=MyClass()
+#calling for the method
+#no arguments
+obj.say()
+#calling for Class function
+#argument  -is a specimen
+MyClass.say(obj)
+#calling functions of the class
+#argument -is a text
+MyClass.say("Some text")
+print(type(MyClass.say))
+print(type(obj.say))
+
+
+№2
+#adding and deleting of methods
+#creating a class
+class MyClass:
+    pass
+#creating specimen of the class
+A=MyClass()
+B=MyClass()
+C=MyClass()
+#creating first function
+def hello():
+    print ("The method HELLO of the class specimen ")
+#creating another function
+def hi():
+    print ("One more methods - HI !!! ")
+#detrermine the method of specimen
+A.say=hello
+C.say=hi
+#calling method of specimen
+A.say()
+print(type(A.say))
+#calling method of specimem
+try:
+    B.say()
+#If there are no such method
+except AttributeError:
+    print ("There are no such METHODs")
+
+#calling method of specimem
+C.say()
+#calling for function of the CLASS
+try:
+    MyClass.say()
+#If there are no such functions
+except AttributeError:
+    print ("There are no such functions")
+#deleting method of the specimen
+del A.say
+#calling for method of specimen
+try:
+    A.say()
+except AttributeError:
+    print("There are no such methods ")
+#calling for a method of specimen
+C.say()
